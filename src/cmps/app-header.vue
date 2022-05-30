@@ -1,28 +1,26 @@
 <template>
-  <header 
-   :class="{ 'scrolled-nav' : scrolledNav }">
+  <header :class="{ 'scrolled-nav' : scrolledNav }">
       <nav>
-          <div class="header-logo">
-            <router-link :to="{ name: 'Home' }"><img src="@/assets/logo.png" alt=""></router-link>
-          </div>
-          <ul v-show="!mobile" class="navigation">
-              <li><router-link class="link" :to="{ name: 'Shop' }">Shop</router-link></li>
-              <!-- <li><router-link class="link" :to="{ name: '' }"></router-link></li> -->
-              <li><router-link class="link" :to="{ name: 'About' }">About us</router-link></li>
-              <li><router-link class="link" :to="{ name: 'Contact' }">Contact</router-link></li>
+        <div class="header-logo">
+          <router-link :to="{ name: 'Home' }"><img src="@/assets/logo.png" alt=""></router-link>
+        </div>
+        <ul v-show="!mobile" class="navigation">
+            <li><router-link class="link" :to="{ name: 'Shop' }">Shop</router-link></li>
+            <!-- <li><router-link class="link" :to="{ name: '' }"></router-link></li> -->
+            <li><router-link class="link" :to="{ name: 'About' }">About us</router-link></li>
+            <li><router-link class="link" :to="{ name: 'Contact' }">Contact</router-link></li>
+        </ul>
+        <div class="hamburger-icon">
+            <i @click="toggleMobileNav" v-show="mobile" class="far fa-bars material-symbols-outlined" :class="{'icon-active': mobileNav}">menu</i>
+        </div>
+        <transition name="mobile-nav">
+          <ul v-show="mobileNav" class="dropdown-nav">
+            <li><router-link class="link" :to="{ name: 'Shop' }">Shop</router-link></li>
+            <!-- <li><router-link class="link" :to="{ name: '' }"></router-link></li> -->
+            <li><router-link class="link" :to="{ name: 'About' }">About us</router-link></li>
+            <li><router-link class="link" :to="{ name: 'Contact' }">Contact</router-link></li>
           </ul>
-          <div class="hamburger-icon">
-              <i @click="toggleMobileNav" v-show="mobile" class="far fa-bars material-symbols-outlined" :class="{'icon-active': mobileNav}">menu</i>
-          </div>
-          <transition name="mobile-nav">
-            <ul v-show="mobileNav" class="dropdown-nav">
-              <li><router-link class="link" :to="{ name: 'Shop' }">Shop</router-link></li>
-              <!-- <li><router-link class="link" :to="{ name: '' }"></router-link></li> -->
-              <li><router-link class="link" :to="{ name: 'About' }">About us</router-link></li>
-              <li><router-link class="link" :to="{ name: 'Contact' }">Contact</router-link></li>
-            </ul>
-          </transition>
-          
+        </transition>
       </nav>
   </header>
 </template>

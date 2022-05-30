@@ -28,7 +28,7 @@ export default{
 .app{
   //  height: 200vh;
   min-height: 100vh;
- 
+  // display: flex;
   position: relative;
   background-color: #f1f1f1;
 }
@@ -36,7 +36,19 @@ export default{
 .container{
   padding: 0 20px;
   max-width: 1140px;
-  margin: 0 auto
+  margin: 0 auto;
+  
+}
+
+.flex-centered-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flex-row{
+  display: flex;
+  flex-direction: row;
+ 
 }
 </style>
 
