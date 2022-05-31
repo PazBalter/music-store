@@ -6,7 +6,6 @@
         </div>
         <ul v-show="!mobile" class="navigation">
             <li><router-link class="link" :to="{ name: 'Shop' }">Shop</router-link></li>
-            <!-- <li><router-link class="link" :to="{ name: '' }"></router-link></li> -->
             <li><router-link class="link" :to="{ name: 'About' }">About us</router-link></li>
             <li><router-link class="link" :to="{ name: 'Contact' }">Contact</router-link></li>
         </ul>
